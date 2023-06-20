@@ -49,19 +49,18 @@ kind: GatewayClassBlueprint
 metadata:
   name: common-test
 spec:
-  values:
-    override:
-      someValue1: blueprint-override1
-      nested:
-        someValue1: blueprint-nested-override1
-    default:
-      someValue5: blueprint-default5
-      someValue6: blueprint-default6
-      someValue7: blueprint-default7
-      someValue8: blueprint-default8
-      nested:
-        someValue2: blueprint-nested-default2
-        someValue3: blueprint-nested-default3
+  override:
+    someValue1: blueprint-override1
+    nested:
+      someValue1: blueprint-nested-override1
+  default:
+    someValue5: blueprint-default5
+    someValue6: blueprint-default6
+    someValue7: blueprint-default7
+    someValue8: blueprint-default8
+    nested:
+      someValue2: blueprint-nested-default2
+      someValue3: blueprint-nested-default3
 
   gatewayTemplate:
     resourceTemplates:
