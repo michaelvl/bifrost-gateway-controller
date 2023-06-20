@@ -230,7 +230,7 @@ func lookupValues(ctx context.Context, r ControllerClient, gatewayClassName stri
 	// Process defaults
 
 	// Blueprint default values are first
-	if values, err = mergeValues(gwcb.Spec.Values.Default, values); err != nil {
+	if values, err = mergeValues(gwcb.Spec.Default, values); err != nil {
 		return nil, fmt.Errorf("while processing blueprint default values for gatewayclass %s: %w", gatewayClassName, err)
 	}
 	// GatewayClassConfig, ordered, global first
@@ -263,7 +263,7 @@ func lookupValues(ctx context.Context, r ControllerClient, gatewayClassName stri
 	}
 
 	// Blueprint override values are last since they have highest precedence
-	if values, err = mergeValues(gwcb.Spec.Values.Override, values); err != nil {
+	if values, err = mergeValues(gwcb.Spec.Override, values); err != nil {
 		return nil, fmt.Errorf("while processing blueprint override values for gatewayclass %s: %w", gatewayClassName, err)
 	}
 

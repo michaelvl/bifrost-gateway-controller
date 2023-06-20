@@ -55,10 +55,10 @@ type ResourceSpec struct {
 }
 
 type GatewayClassBlueprintSpec struct {
-	// Template for hardcoded values
+	// Template for hardcoded values. Follows GEP-713 policy format
 	//
 	// +optional
-	Values TemplateValues `json:"values,omitempty"`
+	TemplateValues `json:",inline"`
 
 	// Template for child resources created from Gateways
 	//
