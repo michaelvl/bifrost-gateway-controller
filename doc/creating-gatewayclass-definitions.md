@@ -168,7 +168,7 @@ type TemplateValues struct {
 	// Parent HTTPRoute. Only set when rendering HTTPRoute templates
 	HTTPRoute map[string]any
 
-	// Template values
+	// Template values. Effective as from combination of relevant GEP-713 policies
 	Values map[string]any
 
 	// Current resources (i.e. sibling resources)

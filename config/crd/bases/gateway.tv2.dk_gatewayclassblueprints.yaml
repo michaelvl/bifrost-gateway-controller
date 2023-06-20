@@ -35,6 +35,10 @@ spec:
             type: object
           spec:
             properties:
+              default:
+                description: Defaults have precedence from GatewayConfig (highest)
+                  through GatewayClassConfig to GatewayClassBlueprint (lowest)
+                x-kubernetes-preserve-unknown-fields: true
               gatewayTemplate:
                 description: Template for child resources created from Gateways
                 properties:
@@ -59,18 +63,10 @@ spec:
                       type: string
                     type: object
                 type: object
-              values:
-                description: Template for hardcoded values
-                properties:
-                  default:
-                    description: Defaults have precedence from GatewayConfig (highest)
-                      through GatewayClassConfig to GatewayClassBlueprint (lowest)
-                    x-kubernetes-preserve-unknown-fields: true
-                  override:
-                    description: Overrides have precedence from GatewayClassBlueprint
-                      (highest) through GatewayClassConfig to GatewayConfig (lowest)
-                    x-kubernetes-preserve-unknown-fields: true
-                type: object
+              override:
+                description: Overrides have precedence from GatewayClassBlueprint
+                  (highest) through GatewayClassConfig to GatewayConfig (lowest)
+                x-kubernetes-preserve-unknown-fields: true
             type: object
           status:
             properties:

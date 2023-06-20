@@ -3,16 +3,15 @@ kind: GatewayClassBlueprint
 metadata:
   name: contour-istio-cert
 spec:
-  values:
-    default:
-      hpa:
-        minReplicas: 1  # optional
-        maxReplicas: 3  # Optional, will default to minReplicas if minReplicas is defined
-        averageUtilization: 60
-      pdb:
-        minAvailable: "1"
-        maxUnavailable:
-      tags: []
+  default:
+    hpa:
+      minReplicas: 1  # optional
+      maxReplicas: 3  # Optional, will default to minReplicas if minReplicas is defined
+      averageUtilization: 60
+    pdb:
+      minAvailable: "1"
+      maxUnavailable:
+    tags: []
 
   # The following are templates used to 'implement' a 'parent' Gateway
   gatewayTemplate:

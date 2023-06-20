@@ -81,12 +81,11 @@ kind: GatewayClassBlueprint
 metadata:
   name: default-gateway-class
 spec:
-  values:
-    default:
-      configmap2SuffixData:
-      - one
-      - two
-      - three
+  default:
+    configmap2SuffixData:
+    - one
+    - two
+    - three
   gatewayTemplate:
     status:
       template: |
